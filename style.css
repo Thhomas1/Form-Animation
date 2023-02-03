@@ -59,11 +59,9 @@ form{
   pointer-events: none; /* esto es para que puedas pasar el cursor y agarrarlo */
   padding: 0.3rem 0rem;
   font-size: 0.9rem;
-  opacity: 0.7;
-
-  
- 
+  opacity: 0.7; 
 }
+
 
 .line-svg{
   position: absolute;
