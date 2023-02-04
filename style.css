@@ -45,7 +45,7 @@ form{
   position: absolute;
   top: 0;
   border: none;
-  outline: none;
+  outline: none; /* para que no aparezca ese borde feo */
   color: #777474;
   font-size: 0.7rem;
 }
@@ -67,7 +67,7 @@ form{
   position: absolute;
   left: 0;
   bottom: 0;
-  overflow: visible;
+  overflow: visible; /* para que la linea no se vaya a la mierda*/
   opacity: 0.8;
 }
 
