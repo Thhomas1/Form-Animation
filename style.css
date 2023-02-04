@@ -60,12 +60,15 @@ form{
   padding: 0.3rem 0rem;
   font-size: 0.9rem;
   opacity: 0.6; 
+  
 }
 
 .line-svg{
   position: absolute;
   left: 0;
   bottom: 0;
+  overflow: visible;
+  opacity: 0.8;
 }
 
 .checkbox-label{
@@ -80,6 +83,7 @@ form{
 .checkbox{
   opacity: 0;
   cursor: pointer;
+  z-index: 3;
 }
 
 .checkbox-label{
@@ -105,9 +109,31 @@ form{
 }
 .checkbox-fill{
   position: absolute;
-  background-color: #6190e8;
+  background: #6190e8;
   width: 100%;
   height: 100%;
   top: 100%;
+}
+
+.tick-mark{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6); /* usamos el trasnform porque el z index no funca debido al checkbox-container que tiene overflow hidden */
+  z-index: 2;
+}
+
+button{
+  font-family: "Poppins" sans-serif;
+  font-weight: 500;
+  font-size: 0.6rem;
+  background: #6190e8;
+  color: white;
+  border-radius: 0.2rem;
+  border-style: none;
+  padding: 0.5rem 2.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  align-self: flex-start;
 
 }
