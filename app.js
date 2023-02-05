@@ -24,9 +24,11 @@ containers.forEach(container => {
     input.addEventListener("focus", () => {
         // este if verifica si esta vacio el input
         if(!input.value){
-            tl.fromTo(line, {attr: {d: start}}, {attr: {d: end}, ease: 'Power2.easeOut', duration: 0.75}
+            tl.fromTo(line, {attr: {d: start}}, {attr: {d: end}, ease: "Power2.easeOut", duration: 0.75}
             );
             tl.to(line, {attr: {d: start}, ease: "elastic.out(3,0.5)" }, '<50%');  // para que vuelva la animation
+            // palceholder shift
+            tl.to(placeholder, {top: -15, left: 0, scale: 0.7, duration: 0.5, ease: "Power2.easeOut",}, '<15%');
         }
     });
 });

@@ -47,7 +47,7 @@ form{
   border: none;
   outline: none; /* para que no aparezca ese borde feo */
   color: #777474;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 .input-container{
   position: relative;
@@ -60,7 +60,7 @@ form{
   padding: 0.3rem 0rem;
   font-size: 0.9rem;
   opacity: 0.6; 
-  
+  transform-origin: left;
 }
 
 .line-svg{
