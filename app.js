@@ -79,3 +79,12 @@ function validatePhone(phone) {
   let re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
   return re.test(phone);
 }
+
+
+// coloreee functio
+
+
+function colorize(color, line, placeholder){
+  gsap.to(line, {stroke: color, duration: 0.75});
+  gsap.to(placeholder, {color: color, duration: 0.74});
+}  // *4:30
