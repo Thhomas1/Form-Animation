@@ -1,5 +1,5 @@
-const containers = document.querySelectorAll('.input-container');
-const form = document.querySelectorAll('form');
+const containers = document.querySelectorAll(".input-container");
+const form = document.querySelector("form");
 
 const tl = gsap.timeline({ defaults: {duration: 1}});
 
@@ -15,10 +15,10 @@ const end =
 
 // elastic effect
 
-containers.forEach(container => {
-    const input = container.querySelector('.input');
-    const line = container.querySelector('.elastic-line');
-    const placeholder = container.querySelector('.placeholder');
+containers.forEach((container) => {
+    const input = container.querySelector(".input");
+    const line = container.querySelector(".elastic-line");
+    const placeholder = container.querySelector(".placeholder");
 
 
     input.addEventListener("focus", () => {
@@ -26,9 +26,31 @@ containers.forEach(container => {
         if(!input.value){
             tl.fromTo(line, {attr: {d: start}}, {attr: {d: end}, ease: "Power2.easeOut", duration: 0.75}
             );
-            tl.to(line, {attr: {d: start}, ease: "elastic.out(3,0.5)" }, '<50%');  // para que vuelva la animation
-            // palceholder shift
-            tl.to(placeholder, {top: -15, left: 0, scale: 0.7, duration: 0.5, ease: "Power2.easeOut",}, '<15%');
+            tl.to(line, {attr: {d: start}, ease: "elastic.out(3,0.5)" }, "<50%");  // para que vuelva la animation
+            // placeholder shift
+            tl.to(placeholder, {top: -15, left: 0, scale: 0.7, duration: 0.5, ease: "Power2.easeOut",}, "<15%");
         }
+    });
+});
+
+// revert si no esta focus 
+
+form.addEventListener("click", () => {
+  containers.forEach((container) => {
+    const input = container.querySelector(".input");
+    const line = container.querySelector(".elastic-line");
+    const placeholder = container.querySelector(".placeholder");
+
+    if (document.activeElement !== input) {
+      if (!input.value) {
+        gsap.to(placeholder, {
+          top: 0,
+          left: 0,
+          scale: 1,
+          duration: 0.5,
+          ease: "Power2.easeOut",
+        });
+      }
+    }
     });
 });
