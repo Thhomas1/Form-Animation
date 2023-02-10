@@ -54,15 +54,38 @@ form.addEventListener("click", () => {
     }
 
     //  nuestra validacion
+    // validacion del nombre
     input.addEventListener("input", (e) => {
       if(e.target.type === "text"){
         let inputText = e.target.value;
         if(inputText.length > 2){
           // coloree
+          colorize("#6391E8", line, placeholder);
+        }else{
+          colorize("#F38C99", line, placeholder);
         }
-        
       }
-    })
+      // validacion de Email
+      if(e.target.type === "email"){
+        let valid = validateEmail(e.target.value);
+        if(valid){
+          // coloree
+          colorize("#6391E8", line, placeholder);
+        }else{
+          colorize("#F38C99", line, placeholder);
+        }
+      }
+      // validacion de Phone
+      if(e.target.type === "tel"){
+        let valid = validatePhone(e.target.value);
+        if(valid){
+          // coloree
+          colorize("#6391E8", line, placeholder);
+        }else{
+          colorize("#F38C99", line, placeholder);
+        }
+      }
+    });
 
 
     });
@@ -86,5 +109,5 @@ function validatePhone(phone) {
 
 function colorize(color, line, placeholder){
   gsap.to(line, {stroke: color, duration: 0.75});
-  gsap.to(placeholder, {color: color, duration: 0.74});
+  gsap.to(placeholder, {color: color, duration: 0.75});
 }  // *4:30
