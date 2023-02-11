@@ -110,4 +110,4 @@ function validatePhone(phone) {
 function colorize(color, line, placeholder){
   gsap.to(line, {stroke: color, duration: 0.75});
   gsap.to(placeholder, {color: color, duration: 0.75});
-}  // *4:30
+}  // *4:30 copiar aca lo pusheado que todavia no se pudo hacer
