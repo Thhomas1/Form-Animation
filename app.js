@@ -110,30 +110,4 @@ function validatePhone(phone) {
 function colorize(color, line, placeholder){
   gsap.to(line, {stroke: color, duration: 0.75});
   gsap.to(placeholder, {color: color, duration: 0.75});
-} 
-
-
-// Checkbox animationeee
-
-const checkbox = document.querySelector(".checkbox");
-const tl2 = gsap.timeline({
-  defaults: {duration: 0.5, ease: "Power2.easeOut"},
-});
-
-const tickMarkPath = document.querySelector(".tick-mark path");
-const pathLength = tickMarkPath.getTotalLength();
-
-
-gsap.set(tickMarkPath, {
-  strokeDashoffset: pathLength,
-  strokeDasharray: pathLength,
-});
-
-checkbox.addEventListener("click", () => {
-  if(checkbox.checked){
-    tl2.to(".checkbox-fill", { top: "0%" });
-    tl2.fromTo(tickMarkPath, 
-      {strokeDashoffset: pathLength}, 
-      {strokeDashoffset: 0})
-  }
-})
+}  // *4:30 copiar aca lo pusheado que todavia no se pudo hacer
