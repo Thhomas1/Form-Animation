@@ -140,7 +140,7 @@ button{
 
 #character{
   position: absolute;
-  transform: scale(0.4) translate(0%, 30%);
+  transform: scale(0.6) translate(0%, 30%);
   bottom: 0;
   left: 0;
   transform-origin: bottom;

@@ -146,3 +146,16 @@ checkbox.addEventListener("click", () => {
     tl2.to(".checkbox-label", {color: "#C5C5C5"},"<" );
   }
 });
+
+
+// Animando el chabon
+
+gsap.set("#eye", {transformOrigin: "center"})
+gsap.fromTo("#eye", {scaleY: 1},
+ {scaleY: 0.3, 
+  repeat: -1, 
+  yoyo: true,
+  repeatDelay: 0.5,
+  ease: "Power2.easeOut", 
+});
+gsap.fromTo("#eyebrow", {y: 0}, {y: -1, repeat: -1 , yoyo: true, repeatDelay:0.5,  ease: "Power2.easeOut"})
