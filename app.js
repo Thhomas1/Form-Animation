@@ -174,5 +174,14 @@ button.addEventListener("click", (e) => {
  tl3.to("form", {scale: 0.8},"<" );
  tl3.fromTo(".submitted", {opacity: 0, y:30}, {opacity: 1, y: 0});
 
- 
+ // mano q se mueva to'
+
+gsap.set("#hand",{ transformOrigin:"left"});
+gsap.fromTo("#hand", {rotation: 0, y:0}, {rotation: -10, y:2, ease:"elastic(3,0.3)", duration: 2, delay: 1}
+);
+
+gsap.set("#shoes, #Vector_2",{ transformOrigin:"right"});
+gsap.fromTo("#shoes", {rotation: 0, y:0}, {rotation: 4, y:2, ease:"elastic(3,0.3)", duration: 2, delay: 1}
+);
+
 });
