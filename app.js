@@ -134,6 +134,15 @@ checkbox.addEventListener("click", () => {
     tl2.to(".checkbox-fill", { top: "0%" });
     tl2.fromTo(tickMarkPath, 
       {strokeDashoffset: pathLength}, 
-      {strokeDashoffset: 0})
+      {strokeDashoffset: 0}, "<50%"
+      );
+      tl.to(".checkbox-label", {color: "#6391E8"},"<" );
+
+  }else{
+    tl2.to(".checkbox-fill", {top: "100%"});
+    tl2.fromTo(tickMarkPath, 
+      {strokeDashoffset: 0},
+      {strokeDashoffset: pathLength},"<50%");
+    tl2.to(".checkbox-label", {color: "#C5C5C5"},"<" );
   }
-})
+});
