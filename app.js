@@ -158,4 +158,21 @@ gsap.fromTo("#eye", {scaleY: 1},
   repeatDelay: 0.5,
   ease: "Power2.easeOut", 
 });
-gsap.fromTo("#eyebrow", {y: 0}, {y: -1, repeat: -1 , yoyo: true, repeatDelay:0.5,  ease: "Power2.easeOut"})
+gsap.fromTo("#eyebrow", {y: 0}, {y: -1, repeat: -1 , yoyo: true, repeatDelay:0.5,  ease: "Power2.easeOut"});
+
+// submit button 
+
+const button = document.querySelector("button");
+const tl3 = gsap.timeline({
+  defaults: {duration: 0.75, ease: "Power2.easeOut"},
+});
+
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  tl3.to(".contact-right, .contact-left", {y: 30, opacity: 0, PointerEvents: "none",
+ });
+ tl3.to("form", {scale: 0.8},"<" );
+ tl3.fromTo(".submitted", {opacity: 0, y:30}, {opacity: 1, y: 0});
+
+ 
+});
